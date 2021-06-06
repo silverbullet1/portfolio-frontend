@@ -25,7 +25,7 @@ export default () => (
         try {
           await axios({
             method: 'POST',
-            url: `${process.env.BACKEND_URL}`,
+            url: `${process.env.GATSBY_BACKEND_URL}`,
             headers: {
               'Content-Type': 'application/json',
             },

@@ -10,7 +10,7 @@ import { Wrapper, Grid, Item, Content, Stats } from "./styles";
 export const Projects = () => {
   const { theme } = useContext(ThemeContext);
   const [repos, setRepos] = useState([]);
-  // console.log(process.env.GITHUB_TOKEN);
+  // console.log(process.env.GATSBY_GITHUB_TOKEN);
   useEffect(() => {
     axios
       .get("https://api.github.com/user/repos", {
@@ -20,7 +20,7 @@ export const Projects = () => {
           affiliation: "owner,collaborator",
         },
         headers: {
-          Authorization: `token ${process.env.GITHUB_TOKEN}`,
+          Authorization: `token ${process.env.GATSBY_GITHUB_TOKEN}`,
         },
       })
       .then((response) => response.data)
